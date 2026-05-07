@@ -246,7 +246,7 @@
         </div>
     </div>
     {{--@push('scripts')--}}
-    <script src="{{ asset('vendor/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
     <script>
         tinymce.init({
             selector:'textarea',
