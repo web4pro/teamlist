@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Nicolaslopezj\Searchable\SearchableTrait;
-use Stephenjude\DefaultModelSorting\Traits\DefaultOrderBy;
+use App\Traits\DefaultOrderBy;
 
 class Member extends Model {
 
