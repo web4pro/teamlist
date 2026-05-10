@@ -24,8 +24,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('events:send-daily')
+            ->dailyAt((string) config('events.notify_at', '09:00'))
+            ->timezone((string) config('events.timezone', 'UTC'))
+            ->when(fn () => (bool) config('events.enabled', true))
+            ->withoutOverlapping(10)
+            ->onOneServer()
+            ->runInBackground();
     }
 
     /**
